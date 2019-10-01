@@ -22,6 +22,7 @@ import { HomeDesc, HomePage } from '../home/styled';
 import DataEntryComponent from '../../components/ClientDetailPage/DataEntry';
 import StrategyPage from '../../components/StrategyPage/StrategyPage';
 import ProductOptimizer from './productOptimizer';
+import DocumentsPage from '../../components/DocumentsPage/DocumentsPage';
 
 const getParams = (params: { clientId?: string; tagName?: string; tabName?: string }) => {
   return {
@@ -91,6 +92,9 @@ class Client extends React.PureComponent<RouteComponentProps & ClientProps> {
         }
         case Tab.ProductOptimizer: {
           return <ProductOptimizer clientId={clientId} pageData={pageData} />;
+        }
+        case Tab.Documents: {
+          return <DocumentsPage />;
         }
         default: {
           return (
