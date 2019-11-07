@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'formik';
 import { get } from 'lodash';
 
+import numeral from 'numeral';
 import { StepWrapper } from '../styled';
 import { DocumentData, FormikPartProps } from '../PresentationPage';
 import { GraphType } from '../../StrategyPage/Graph/GraphContainer';
 import { loadGraphData } from '../../StrategyPage/StrategyHeader';
 import GraphPresentation from '../../StrategyPage/Graph/GraphPresentation';
-import numeral from 'numeral';
 
 const chartConfig = {
   datasets: [
@@ -75,15 +75,12 @@ const PresentationStep6 = (props: FormikPartProps) => {
             position: 'bottom',
           },
           tooltips: {
-            titleFontFamily:
-              '-apple-system, BlinkMacSystemFont, \'Segoe UI\', \'Roboto\', \'Oxygen\', \'Ubuntu\', \'Cantarell\', ' +
-              '\'Fira Sans\', \'Droid Sans\', \'Helvetica Neue\', sans-serif',
-            bodyFontFamily:
-              '-apple-system, BlinkMacSystemFont, \'Segoe UI\', \'Roboto\', \'Oxygen\', \'Ubuntu\', \'Cantarell\', ' +
-              '\'Fira Sans\', \'Droid Sans\', \'Helvetica Neue\', sans-serif',
-            footerFontFamily:
-              '-apple-system, BlinkMacSystemFont, \'Segoe UI\', \'Roboto\', \'Oxygen\', \'Ubuntu\', \'Cantarell\', ' +
-              '\'Fira Sans\', \'Droid Sans\', \'Helvetica Neue\', sans-serif',
+            titleFontFamily: `-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+            'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif`,
+            bodyFontFamily: `-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+            'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif`,
+            footerFontFamily: `-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+            'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif`,
             intersect: false,
             mode: 'label',
             callbacks: {

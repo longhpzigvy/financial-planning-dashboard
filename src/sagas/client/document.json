@@ -371,6 +371,24 @@
               "value": "Rollover your existing super into a CFS FirstChoice Wholesale Super",
               "description": "",
               "alternatives": ""
+            },
+            {
+              "id": 4,
+              "value": "John Samual, salary sacrifice $10,000 per annum into CFS FirstChoice Wholesale Super from Jul 2019 to Jul 2023",
+              "description": "John, we recommend you: Arrange with your employer to salary sacrifice $10,000 per annum of your future salary into the recommended CFS FirstChoice Wholesale Personal Super until your retirement in 2023.",
+              "alternatives": "Making a personal deductible contribution. However, this was discounted as salary sacrificing is a disciplined savings strategy as your employer withholds the salary sacrifice amount from your salary and pays it direct to your superannuation fund."
+            },
+            {
+              "id": 5,
+              "value": "John Samual, make non-concessional contribution of $60,000 in 2019/2020 Financial Year. This contribution is to be funded from Cash",
+              "description": "John, we recommend you make a non-concessional contribution of $60,000 into your existing Hesta Personal Super in the 2019/20 financial year.  The contribution can be made from your existing bank account.",
+              "alternatives": ""
+            },
+            {
+              "id": 6,
+              "value": "John Samual, replace your existing Hesta Personal Super",
+              "description": "John, we recommend you: Rollover your existing Hesta Personal Super worth approximately $460,000 into a new CFS FirstChoice Wholesale Personal Super.",
+              "alternatives": "Retain your existing superannuation fund as is. This was discounted due to the proposed product:\n-Having more investment options\n -Providing the ability to structure a diversified portfolio suited to your risk profile\n -Providing transparency of how your funds are invested"
             }
           ]
         }
