@@ -182,7 +182,7 @@ class CardDetails extends React.PureComponent<CardDetailsProps> {
                 record: row,
                 editable: true,
                 rowIndex,
-                type: col.type || EditCellType.text,
+                type: col.type || EditCellType.textarea,
                 onEdit: this.onEdit(arrayHelpers),
                 options: {
                   placeholder: index === 0 ? 'Enter description' : '',
