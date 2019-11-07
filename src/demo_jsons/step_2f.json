@@ -2337,7 +2337,7 @@
         "title": "Protection Level",
         "value": "High",
         "isIncrease": null,
-        "delta": ""
+        "delta": null
       }
     ],
     "graph": [],
