@@ -186,6 +186,8 @@ class CardDetails extends React.PureComponent<CardDetailsProps> {
                 onEdit: this.onEdit(arrayHelpers),
                 options: {
                   placeholder: index === 0 ? 'Enter description' : '',
+                  autosize: false,
+                  rows: 5,
                 },
                 overwrite,
               }),
