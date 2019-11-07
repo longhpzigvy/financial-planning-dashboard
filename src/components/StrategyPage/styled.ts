@@ -160,3 +160,13 @@ export const StatisticUpDown = styled.span`
     color: #ff0000;
   }
 `;
+
+export const EstatePlanningBoxWrapper = styled.div`
+  overflow: hidden;
+  position: relative;
+  height: 220px;
+  background: #fff;
+  border-radius: 0.35rem;
+  box-shadow: 4px 4px 10px 3px rgba(100, 100, 101, 0.21), 0 0 15px rgba(115, 162, 208, 0.06);
+  padding: 20px;
+`;

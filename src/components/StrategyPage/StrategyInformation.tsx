@@ -7,7 +7,7 @@ import { Col, Icon, Row } from 'antd';
 import StatisticItem from './StatisticItem';
 import { StrategyTypes } from '../../enums/strategies';
 import StandardText from './StandardText';
-import { StrategyInfoWrapper } from './styled';
+import { EstatePlanningBoxWrapper, StrategyInfoWrapper } from './styled';
 import GraphContainer, { GraphType } from './Graph/GraphContainer';
 import { StrategyEntry, GraphData } from '../../reducers/client';
 import { StandardAction } from '../../reducers/reducerTypes';
@@ -223,24 +223,26 @@ class StrategyInformation extends PureComponent<FormikPartProps & StrategyInform
                 <StatisticItem listOfKpi={kpi} />
               </Col>
               <Col span={12}>
-                <KeyPoitList>
-                  <KeyPoitItem>
-                    <Icon type="exclamation" />
-                    Will
-                  </KeyPoitItem>
-                  <KeyPoitItem>
-                    <Icon type="exclamation" />
-                    PoA
-                  </KeyPoitItem>
-                  <KeyPoitItem>
-                    <Icon type="check" />
-                    Death Benefit nomination
-                  </KeyPoitItem>
-                  <KeyPoitItem>
-                    <Icon type="exclamation" />
-                    Testamentary Trust
-                  </KeyPoitItem>
-                </KeyPoitList>
+                <EstatePlanningBoxWrapper>
+                  <KeyPoitList>
+                    <KeyPoitItem>
+                      <Icon type="exclamation" />
+                      Will
+                    </KeyPoitItem>
+                    <KeyPoitItem>
+                      <Icon type="exclamation" />
+                      PoA
+                    </KeyPoitItem>
+                    <KeyPoitItem>
+                      <Icon type="check" />
+                      Death Benefit nomination
+                    </KeyPoitItem>
+                    <KeyPoitItem>
+                      <Icon type="exclamation" />
+                      Testamentary Trust
+                    </KeyPoitItem>
+                  </KeyPoitList>
+                </EstatePlanningBoxWrapper>
               </Col>
               {/*<Col span={12}>*/}
               {/*  <GraphContainer type={GraphType.Bar} dataList={basicGraphData} onGraphClick={this.onGraphClick} />*/}
