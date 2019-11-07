@@ -89,9 +89,9 @@ const StrategyPage = (props: StrategyPageProps) => {
   }, [graphs, pinned]);
 
   const togglePinned = useCallback(() => {
-    setPinned((p) => !p);
+    setPinned(p => !p);
   }, []);
-  const defaultActiveKey = values(StrategyTypes).filter((i) => i !== StrategyTypes.Centrelink);
+  const defaultActiveKey = values(StrategyTypes).filter(i => i !== StrategyTypes.Centrelink);
 
   return (
     <StrategyPageWrapper>
@@ -125,7 +125,7 @@ const StrategyPage = (props: StrategyPageProps) => {
           tax,
           retirementFunding,
         }}
-        enableReinitialize={true}
+        enableReinitialize
         render={(formikProps: FormikProps<StrategyEntry>) => (
           <FormWrapper id="strategy-form">
             <Collapse defaultActiveKey={defaultActiveKey} bordered={false}>
@@ -187,7 +187,7 @@ const StrategyPage = (props: StrategyPageProps) => {
               </PanelWrapper>
             </Collapse>
             <ActionTableGeneral visible>
-              <Button htmlType={'submit'} type={'primary'} disabled={formikProps.isSubmitting || !formikProps.dirty}>
+              <Button htmlType="submit" type="primary" disabled={formikProps.isSubmitting || !formikProps.dirty}>
                 <Icon type="check" />
                 <span>Submit</span>
               </Button>

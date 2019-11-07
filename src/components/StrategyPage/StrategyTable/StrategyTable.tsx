@@ -26,15 +26,22 @@ interface StrategyTableProps {
 }
 
 class StrategyTable extends PureComponent<FormikPartProps & StrategyTableProps> {
+  public componentDidMount() {
+    const { type } = this.props;
+    if (type === StrategyTypes.Investments) {
+      this.addItem(['client', 'newInvestment']);
+    }
+  }
+
   public addItem = (values: string[]): void => {
     const { addItem } = this.props;
     addItem(values);
-  }
+  };
 
   public getOptions = () => {
     const { type } = this.props;
     return strategyChoices[type] || [];
-  }
+  };
 
   public renderItem = (option: Choice, index: number | string, parentKeys: string[] = []) => {
     if (option.children && option.children.length > 0) {
@@ -56,14 +63,14 @@ class StrategyTable extends PureComponent<FormikPartProps & StrategyTableProps> 
         {option.label}
       </Item>
     );
-  }
+  };
 
   public renderMenu = () => {
     const options = this.getOptions();
     const menu = map(options, (option: Choice, index: number) => this.renderItem(option, index, []));
 
     return <Menu>{menu}</Menu>;
-  }
+  };
 
   public render() {
     const { type, removeItem, defaultFullValue, formik, tableProcessing, redrawGraphs } = this.props;
@@ -76,9 +83,9 @@ class StrategyTable extends PureComponent<FormikPartProps & StrategyTableProps> 
       <>
         <HeaderTitleStrategy>
           <Dropdown overlay={this.renderMenu()} trigger={['click']}>
-            <Icon type={'plus-square'} theme={'filled'} />
+            <Icon type="plus-square" theme="filled" />
           </Dropdown>
-          <TextTitle small={true} strategy>
+          <TextTitle small strategy>
             Strategy
           </TextTitle>
           {shouldShowMarkAndMargin && (
