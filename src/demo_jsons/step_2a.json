@@ -2309,10 +2309,10 @@
   "estatePlanning": {
     "kpi": [
       {
-        "title": "[KPI Name]",
-        "value": 0,
+        "title": "Protection Level",
+        "value": "High",
         "isIncrease": null,
-        "delta": "0%"
+        "delta": ""
       }
     ],
     "graph": [],

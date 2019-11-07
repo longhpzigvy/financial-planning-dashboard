@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router';
-import { Col, Row } from 'antd';
+import { Col, Icon, Row } from 'antd';
 import { ArrayHelpers, FieldArray } from 'formik';
 import { bindActionCreators, Dispatch } from 'redux';
 import { isFunction } from 'lodash';
@@ -17,6 +17,7 @@ import { getParams } from '../../pages/client/Client';
 import { createEvent } from '../../utils/GA';
 import { getStrategyTitle } from './StrategyPage';
 import { StrategyItemI } from './StrategyTable/StrategyItem';
+import { KeyPoitItem, KeyPoitList } from '../PresentationPage/PresentationStep2/styled';
 
 interface StrategyContainerProps {
   type: StrategyTypes;
@@ -47,7 +48,7 @@ class StrategyContainer extends PureComponent<StrategyContainerProps & RouteComp
       arrayHelpers.unshift(data);
       this.redrawGraphs(false);
     }
-  }
+  };
 
   public removeItem = (arrayHelpers: ArrayHelpers) => (index: number, strategy: StrategyItemI) => {
     const { match, type } = this.props;
@@ -55,7 +56,7 @@ class StrategyContainer extends PureComponent<StrategyContainerProps & RouteComp
 
     createEvent('strategy', 'delete', label, getParams(match.params).clientId);
     arrayHelpers.remove(index);
-  }
+  };
 
   public redrawGraphs = (shouldUpdateGraphs: boolean = false) => {
     const { redrawGraphs, match, type } = this.props;
@@ -72,7 +73,7 @@ class StrategyContainer extends PureComponent<StrategyContainerProps & RouteComp
 
       redrawGraphs(payload);
     }
-  }
+  };
 
   public renderStrategyTable = (arrayHelpers: ArrayHelpers) => {
     const { type, defaultFullValue, tableProcessing } = this.props;
@@ -87,7 +88,7 @@ class StrategyContainer extends PureComponent<StrategyContainerProps & RouteComp
         tableProcessing={tableProcessing}
       />
     );
-  }
+  };
 
   public render() {
     const { type, match } = this.props;

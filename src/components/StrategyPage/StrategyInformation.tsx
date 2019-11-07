@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
 import { connect as connectFormik, FormikContext } from 'formik';
 import { get, map } from 'lodash';
+import { Col, Icon, Row } from 'antd';
 import StatisticItem from './StatisticItem';
 import { StrategyTypes } from '../../enums/strategies';
 import StandardText from './StandardText';
 import { StrategyInfoWrapper } from './styled';
-import { Col, Row } from 'antd';
 import GraphContainer, { GraphType } from './Graph/GraphContainer';
 import { StrategyEntry, GraphData } from '../../reducers/client';
 import { StandardAction } from '../../reducers/reducerTypes';
@@ -21,6 +21,7 @@ import {
 import { loadGraphData } from './StrategyHeader';
 import { createEvent } from '../../utils/GA';
 import { getStrategyTitle } from './StrategyPage';
+import { KeyPoitItem, KeyPoitList } from '../PresentationPage/PresentationStep2/styled';
 
 interface FormikPartProps {
   formik: FormikContext<StrategyEntry>;
@@ -88,7 +89,7 @@ class StrategyInformation extends PureComponent<FormikPartProps & StrategyInform
     createEvent('strategy', 'drawer_initiate', getStrategyTitle(type), clientId);
     openDrawer('client');
     fetchDrawerSuccess(drawerData);
-  }
+  };
 
   public render() {
     const { type } = this.props;
@@ -207,11 +208,7 @@ class StrategyInformation extends PureComponent<FormikPartProps & StrategyInform
                 <StatisticItem listOfKpi={kpi} />
               </Col>
               <Col span={12}>
-                <GraphContainer
-                  type={GraphType.Bar}
-                  dataList={insuranceGraphData}
-                  onGraphClick={this.onGraphClick}
-                />
+                <GraphContainer type={GraphType.Bar} dataList={insuranceGraphData} onGraphClick={this.onGraphClick} />
               </Col>
             </Row>
             <StandardText data={standardText} />
@@ -226,8 +223,28 @@ class StrategyInformation extends PureComponent<FormikPartProps & StrategyInform
                 <StatisticItem listOfKpi={kpi} />
               </Col>
               <Col span={12}>
-                <GraphContainer type={GraphType.Bar} dataList={basicGraphData} onGraphClick={this.onGraphClick} />
+                <KeyPoitList>
+                  <KeyPoitItem>
+                    <Icon type="exclamation" />
+                    Will
+                  </KeyPoitItem>
+                  <KeyPoitItem>
+                    <Icon type="exclamation" />
+                    PoA
+                  </KeyPoitItem>
+                  <KeyPoitItem>
+                    <Icon type="check" />
+                    Death Benefit nomination
+                  </KeyPoitItem>
+                  <KeyPoitItem>
+                    <Icon type="exclamation" />
+                    Testamentary Trust
+                  </KeyPoitItem>
+                </KeyPoitList>
               </Col>
+              {/*<Col span={12}>*/}
+              {/*  <GraphContainer type={GraphType.Bar} dataList={basicGraphData} onGraphClick={this.onGraphClick} />*/}
+              {/*</Col>*/}
             </Row>
             <StandardText data={standardText} />
           </StrategyInfoWrapper>
