@@ -26,15 +26,16 @@ interface StrategyTableProps {
 }
 
 class StrategyTable extends PureComponent<FormikPartProps & StrategyTableProps> {
-  public componentDidMount() {
-    const { type } = this.props;
-    if (type === StrategyTypes.Investments) {
-      this.addItem(['client', 'newInvestment']);
-    }
-  }
+  // public componentDidMount() {
+  //   const { type } = this.props;
+  //   if (type === StrategyTypes.Investments) {
+  //     this.addItem(['client', 'newInvestment']);
+  //   }
+  // }
 
   public addItem = (values: string[]): void => {
     const { addItem } = this.props;
+    console.log('values', values);
     addItem(values);
   };
 

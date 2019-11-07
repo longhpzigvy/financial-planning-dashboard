@@ -4,7 +4,6 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { get, isEqual, find } from 'lodash';
 import { Layout, Icon } from 'antd';
-const { Content } = Layout;
 
 import { RootState, StandardAction } from '../../reducers/reducerTypes';
 import {
@@ -25,6 +24,8 @@ import ProductOptimizer from './productOptimizer';
 import Insurance from './insurance';
 import DocumentsPage from '../../components/DocumentsPage/DocumentsPage';
 import PresentationPage from '../../components/PresentationPage/PresentationPage';
+
+const { Content } = Layout;
 
 export const getParams = (params: { clientId?: string; tagName?: string; tabName?: string }) => {
   return {
@@ -79,7 +80,7 @@ class Client extends React.PureComponent<RouteComponentProps & ClientProps> {
     if (fetchDataEntry) {
       fetchDataEntry(params);
     }
-  }
+  };
 
   public render(): JSX.Element {
     const { match, pageData, client, loading } = this.props;
@@ -88,7 +89,7 @@ class Client extends React.PureComponent<RouteComponentProps & ClientProps> {
     if (client && clientId && tagName && tabName) {
       switch (tabName) {
         case Tab.Current: {
-          return <DataEntryComponent clientId={clientId} tabName={tabName} tagName={tagName} empStatus={''} />;
+          return <DataEntryComponent clientId={clientId} tabName={tabName} tagName={tagName} empStatus="" />;
         }
         case Tab.Strategy: {
           return <StrategyPage clientId={clientId} pageData={pageData} />;

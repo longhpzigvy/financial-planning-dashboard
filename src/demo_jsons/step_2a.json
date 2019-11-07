@@ -1272,7 +1272,13 @@
         "text": "Investment income re-invested for full period"
       }
     ],
-    "strategies": [],
+    "strategies": [
+      {
+        "check": true,
+        "sentence": "client.customStrategy",
+        "values": ["John Samual, retain $20,000 in your bank account as emergency cash reserves. The balance funds will be utilised to fund the recommended non-concessional contribution and debt repayment strategy."]
+      }
+    ],
     "drawer": {
       "client": {
         "title": "Client Title of Drawer for Investments section",
@@ -2322,6 +2328,20 @@
         "params": ["not factored "]
       }
     ],
-    "strategies": []
+    "strategies": [
+      {
+        "check": true,
+        "sentence": "client.will.implement"
+      },
+      {
+        "check": true,
+        "sentence": "client.powerOfAttorney.appoint"
+      },
+      {
+        "check": true,
+        "sentence": "partner.superannuationBeneficiary",
+        "values": ["Sarah Samuel"]
+      }
+    ]
   }
 }
