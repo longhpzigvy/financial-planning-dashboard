@@ -130,7 +130,7 @@
       {
         "id": 1,
         "value": 1,
-        "label": "Direct Investment and Cash",
+        "label": "Cash",
         "fullValue": 1920
       },
       {
@@ -2275,7 +2275,7 @@
       }
     ],
     "standardText": [
-      {       
+      {
         "text": "Life and TPD insurance premiums are {{0}}",
         "params": ["stepped"]
       },
@@ -2320,7 +2320,7 @@
       {
         "text": "Legal fees {{0}} into projections",
         "params": ["not factored "]
-      }     
+      }
     ],
     "strategies": []
   }
