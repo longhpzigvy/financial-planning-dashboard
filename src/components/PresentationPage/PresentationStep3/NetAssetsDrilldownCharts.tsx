@@ -5,6 +5,18 @@ import { ChartBlockDrillDown } from './styled';
 import GraphPresentation from '../../StrategyPage/Graph/GraphPresentation';
 import { GraphType } from '../../StrategyPage/Graph/GraphContainer';
 
+const startWithZeroConfig = {
+  scales: {
+    yAxes: [
+      {
+        ticks: {
+          min: 0,
+        },
+      },
+    ],
+  },
+};
+
 const NetAssetsDrilldownCharts = (props: {
   retirementYear: number;
   currentDrilldown: number;
@@ -41,6 +53,7 @@ const NetAssetsDrilldownCharts = (props: {
               yAxes: [
                 {
                   ticks: {
+                    min: 0,
                     // Include a dollar sign in the ticks
                     callback: (value: any, index: any, values: any) => {
                       return numeral(Math.round(value * 100) / 100).format('$0,0.[00]');
@@ -64,6 +77,7 @@ const NetAssetsDrilldownCharts = (props: {
               display: true,
               position: 'bottom',
             },
+            ...startWithZeroConfig,
           }}
         />
       </ChartBlockDrillDown>
@@ -78,6 +92,7 @@ const NetAssetsDrilldownCharts = (props: {
               display: true,
               position: 'bottom',
             },
+            ...startWithZeroConfig,
           }}
         />
       </ChartBlockDrillDown>

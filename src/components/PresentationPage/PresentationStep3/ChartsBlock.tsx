@@ -117,6 +117,18 @@ const calmPVConfigWithLifeEvent = {
   ],
 };
 
+const startWithZeroConfig = {
+  scales: {
+    yAxes: [
+      {
+        ticks: {
+          min: 0,
+        },
+      },
+    ],
+  },
+};
+
 const ChartsBlock = (props: { chartsData: any; retirementYear?: number; hasLifeEvent?: boolean }) => {
   const { chartsData, retirementYear = 60, hasLifeEvent = false } = props;
   const [chartIndex, setChartIndex] = useState<number>(-1);
@@ -138,6 +150,7 @@ const ChartsBlock = (props: { chartsData: any; retirementYear?: number; hasLifeE
               type={GraphType.Line}
               options={{
                 maintainAspectRatio: true,
+                ...startWithZeroConfig,
               }}
               data={loadGraphData(configNetAssets)(get(chartsData, 'netAssetsChartData'))}
               redraw
@@ -149,6 +162,7 @@ const ChartsBlock = (props: { chartsData: any; retirementYear?: number; hasLifeE
               type={GraphType.Bar}
               options={{
                 maintainAspectRatio: true,
+                ...startWithZeroConfig,
               }}
               data={loadGraphData(cashflowConfig)(get(chartsData, 'cashflowChartData'))}
               redraw
@@ -159,6 +173,7 @@ const ChartsBlock = (props: { chartsData: any; retirementYear?: number; hasLifeE
             <GraphPresentation
               options={{
                 maintainAspectRatio: true,
+                ...startWithZeroConfig,
               }}
               type={GraphType.Bar}
               data={loadGraphData(taxConfig)(get(chartsData, 'taxChartData'))}
@@ -174,6 +189,7 @@ const ChartsBlock = (props: { chartsData: any; retirementYear?: number; hasLifeE
               redraw
               options={{
                 maintainAspectRatio: true,
+                ...startWithZeroConfig,
               }}
             />
           </ChartBlockRight>

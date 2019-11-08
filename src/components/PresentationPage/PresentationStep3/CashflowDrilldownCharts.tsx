@@ -5,7 +5,7 @@ import { ChartBlockDrillDown } from './styled';
 import GraphPresentation from '../../StrategyPage/Graph/GraphPresentation';
 import { GraphType } from '../../StrategyPage/Graph/GraphContainer';
 
-const stackconfig = {
+const stackConfig = {
   scales: {
     xAxes: [
       {
@@ -15,12 +15,25 @@ const stackconfig = {
     yAxes: [
       {
         ticks: {
+          min: 0,
           // Include a dollar sign in the ticks
           callback: (value: any, index: any, values: any) => {
             return numeral(Math.round(value * 100) / 100).format('$0,0.[00]');
           },
         },
         stacked: true,
+      },
+    ],
+  },
+};
+
+const startWithZeroConfig = {
+  scales: {
+    yAxes: [
+      {
+        ticks: {
+          min: 0,
+        },
       },
     ],
   },
@@ -53,7 +66,7 @@ const CashflowDrilldownCharts = (props: {
               display: true,
               position: 'bottom',
             },
-            ...stackconfig,
+            ...stackConfig,
           }}
         />
       </ChartBlockDrillDown>
@@ -68,7 +81,7 @@ const CashflowDrilldownCharts = (props: {
               display: true,
               position: 'bottom',
             },
-            ...stackconfig,
+            ...stackConfig,
           }}
         />
       </ChartBlockDrillDown>
@@ -83,6 +96,7 @@ const CashflowDrilldownCharts = (props: {
               display: true,
               position: 'bottom',
             },
+            ...startWithZeroConfig,
           }}
         />
       </ChartBlockDrillDown>
