@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { get } from 'lodash';
 
+import numeral from 'numeral';
 import { ChartBlockLeft, ChartBlockRight, ChartsBlockWrapper, ChartBlockTitle } from '../PresentationStep3/styled';
 import GraphPresentation from '../../StrategyPage/Graph/GraphPresentation';
 import { GraphType } from '../../StrategyPage/Graph/GraphContainer';
@@ -224,6 +225,18 @@ const ChartsBlock = (props: { chartsData: any; retirementYear?: number; hasLifeE
                 legend: {
                   display: true,
                   position: 'bottom',
+                },
+                scales: {
+                  yAxes: [
+                    {
+                      ticks: {
+                        max: 100000,
+                        callback: (value: any, index: any, values: any) => {
+                          return numeral(Math.round(value * 100) / 100).format('$0,0.[00]');
+                        },
+                      },
+                    },
+                  ],
                 },
               }}
             />
