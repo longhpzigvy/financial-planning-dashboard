@@ -95,6 +95,9 @@ export const BtnDoneDocument = styled(BtnStepDocument).attrs({
   className: 'btn-done-document',
 })`
   width: 135px;
+  position: absolute;
+  bottom: 30px;
+  right: 100px;
 `;
 
 export const StepWrapper = styled.section`
