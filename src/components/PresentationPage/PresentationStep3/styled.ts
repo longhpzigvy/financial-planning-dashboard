@@ -111,7 +111,7 @@ export const ChartBlockDrillDown = styled(ChartBlock).attrs({
 export const ChartBlockTitle = styled.div`
   display: inline-block;
   width: 100%;
-  font-size: 20px;
+  font-size: 14px;
   color: #4e5b86;
   margin-bottom: 10px;
   //text-align: left;

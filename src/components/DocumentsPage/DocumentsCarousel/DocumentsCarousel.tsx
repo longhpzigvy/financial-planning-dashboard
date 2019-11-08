@@ -31,7 +31,7 @@ const DocumentsCarousel = (props: DocumentsCarouselProps) => {
 
   return (
     <CarouselWrapper>
-      <Carousel effect="fade" dotPosition={'left'} initialSlide={slideNumber} ref={carouselInstance}>
+      <Carousel effect="fade" dotPosition="left" initialSlide={slideNumber} ref={carouselInstance}>
         {cards.map((card: Record, index: number) => (
           <CardDetails
             record={card}

@@ -2,19 +2,22 @@ import styled from 'styled-components';
 
 export const CarouselWrapper = styled.section.attrs({
   className: 'carousel-wrapper',
-  })`
+})`
+  .ant-carousel-vertical .slick-dots-left {
+    left: unset !important;
+  }
   .ant-carousel {
     .slick-dots {
-      li{
+      li {
         margin: 5px 2px;
         border-radius: 4px;
-        button{
+        button {
           height: 28px;
           background-color: #979db5;
           opacity: 1;
         }
-        &.slick-active{
-          button{
+        &.slick-active {
+          button {
             height: 56px;
             background-color: #75bcff;
           }
