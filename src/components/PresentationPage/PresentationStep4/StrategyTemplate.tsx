@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { TemplateContent, TemplateWrapper, TemplateHeader } from './styled';
 import { Skeleton } from 'antd';
+import { TemplateContent, TemplateWrapper, TemplateHeader, TemplateImg } from './styled';
 
 interface StrategyTemplateProps {
   index: number;
@@ -31,10 +31,9 @@ const StrategyTemplate = (props: StrategyTemplateProps) => {
           active
         >
           <TemplateHeader>
-            <img
+            <TemplateImg
               alt="Salary sacrifice"
-              src={`http://sgp18.siteground.asia/~whistle4/images/1.png`}
-              style={{ width: 120, height: 120 }}
+              src="http://sgp18.siteground.asia/~whistle4/images/1.png"
               className="fadeInIcon"
             />
             <div className="header-body">
@@ -85,10 +84,9 @@ const StrategyTemplate = (props: StrategyTemplateProps) => {
           active
         >
           <TemplateHeader>
-            <img
+            <TemplateImg
               alt="Salary sacrifice"
-              src={`http://sgp18.siteground.asia/~whistle4/images/2.png`}
-              style={{ width: 120, height: 120 }}
+              src="http://sgp18.siteground.asia/~whistle4/images/2.png"
               className="fadeInIcon"
             />
             <div className="header-body">
@@ -146,10 +144,9 @@ const StrategyTemplate = (props: StrategyTemplateProps) => {
           active
         >
           <TemplateHeader>
-            <img
+            <TemplateImg
               alt="Salary sacrifice"
-              src={`http://sgp18.siteground.asia/~whistle4/images/3.png`}
-              style={{ width: 120, height: 120 }}
+              src="http://sgp18.siteground.asia/~whistle4/images/3.png"
               className="fadeInIcon"
             />
             <div className="header-body">
@@ -203,10 +200,9 @@ const StrategyTemplate = (props: StrategyTemplateProps) => {
           active
         >
           <TemplateHeader>
-            <img
+            <TemplateImg
               alt="Salary sacrifice"
-              src={`http://sgp18.siteground.asia/~whistle4/images/4.png`}
-              style={{ width: 120, height: 120 }}
+              src="http://sgp18.siteground.asia/~whistle4/images/4.png"
               className="fadeInIcon"
             />
             <div className="header-body">
@@ -250,10 +246,9 @@ const StrategyTemplate = (props: StrategyTemplateProps) => {
           active
         >
           <TemplateHeader>
-            <img
+            <TemplateImg
               alt="Salary sacrifice"
-              src={`http://sgp18.siteground.asia/~whistle4/images/5.png`}
-              style={{ width: 120, height: 120 }}
+              src="http://sgp18.siteground.asia/~whistle4/images/5.png"
               className="fadeInIcon"
             />
             <div className="header-body">
@@ -302,10 +297,9 @@ const StrategyTemplate = (props: StrategyTemplateProps) => {
         active
       >
         <TemplateHeader>
-          <img
+          <TemplateImg
             alt="Salary sacrifice"
-            src={`http://sgp18.siteground.asia/~whistle4/images/6.png`}
-            style={{ width: 120, height: 120 }}
+            src="http://sgp18.siteground.asia/~whistle4/images/6.png"
             className="fadeInIcon"
           />
           <div className="header-body">

@@ -113,6 +113,7 @@ export const TemplateHeader = styled.div`
     }
     &--content {
       font-size: 16px;
+      padding-left: 10px;
     }
   }
 `;
@@ -124,4 +125,10 @@ export const TemplateContent = styled.div`
       margin-bottom: 15px;
     }
   }
+`;
+
+export const TemplateImg = styled.img`
+  width: 120px;
+  height: 120px;
+  margin-left: 25px;
 `;
