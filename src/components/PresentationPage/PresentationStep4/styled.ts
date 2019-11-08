@@ -68,6 +68,7 @@ export const CardItemStyled = styled(Card).attrs({
 
 export const TemplateWrapper = styled.div`
   padding: 0 32px;
+  padding-right: 45px;
   .ant-skeleton.ant-skeleton-with-avatar {
     margin-bottom: 50px;
     .ant-skeleton-header {
