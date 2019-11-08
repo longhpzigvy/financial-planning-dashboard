@@ -1,8 +1,30 @@
 import React from 'react';
+import numeral from 'numeral';
 import { cashFlowDrillDownData, cashFlowDrillDownDataWithLifeEvent } from './drilldownData';
 import { ChartBlockDrillDown } from './styled';
 import GraphPresentation from '../../StrategyPage/Graph/GraphPresentation';
 import { GraphType } from '../../StrategyPage/Graph/GraphContainer';
+
+const stackconfig = {
+  scales: {
+    xAxes: [
+      {
+        stacked: true,
+      },
+    ],
+    yAxes: [
+      {
+        ticks: {
+          // Include a dollar sign in the ticks
+          callback: (value: any, index: any, values: any) => {
+            return numeral(Math.round(value * 100) / 100).format('$0,0.[00]');
+          },
+        },
+        stacked: true,
+      },
+    ],
+  },
+};
 
 const CashflowDrilldownCharts = (props: {
   retirementYear: number;
@@ -31,6 +53,7 @@ const CashflowDrilldownCharts = (props: {
               display: true,
               position: 'bottom',
             },
+            ...stackconfig,
           }}
         />
       </ChartBlockDrillDown>
@@ -45,6 +68,7 @@ const CashflowDrilldownCharts = (props: {
               display: true,
               position: 'bottom',
             },
+            ...stackconfig,
           }}
         />
       </ChartBlockDrillDown>
