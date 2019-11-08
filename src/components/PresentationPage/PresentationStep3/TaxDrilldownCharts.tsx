@@ -14,8 +14,14 @@ const ticks = {
 
 const startWithZeroConfig = {
   scales: {
+    xAxes: [
+      {
+        stacked: true,
+      },
+    ],
     yAxes: [
       {
+        stacked: true,
         ticks,
       },
     ],
