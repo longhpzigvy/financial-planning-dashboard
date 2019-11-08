@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { get } from 'lodash';
+import numeral from 'numeral';
 import { ChartBlockLeft, ChartBlockRight, ChartBlockTitle, ChartsBlockWrapper } from './styled';
 import GraphPresentation from '../../StrategyPage/Graph/GraphPresentation';
 import { GraphType } from '../../StrategyPage/Graph/GraphContainer';
@@ -117,13 +118,18 @@ const calmPVConfigWithLifeEvent = {
   ],
 };
 
+const ticks = {
+  min: 0,
+  callback: (value: any, index: any, values: any) => {
+    return numeral(Math.round(value * 100) / 100).format('$0,0.[00]');
+  },
+};
+
 const startWithZeroConfig = {
   scales: {
     yAxes: [
       {
-        ticks: {
-          min: 0,
-        },
+        ticks,
       },
     ],
   },

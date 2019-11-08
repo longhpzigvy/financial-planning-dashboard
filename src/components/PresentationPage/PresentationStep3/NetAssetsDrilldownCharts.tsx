@@ -5,13 +5,18 @@ import { ChartBlockDrillDown } from './styled';
 import GraphPresentation from '../../StrategyPage/Graph/GraphPresentation';
 import { GraphType } from '../../StrategyPage/Graph/GraphContainer';
 
+const ticks = {
+  min: 0,
+  callback: (value: any, index: any, values: any) => {
+    return numeral(Math.round(value * 100) / 100).format('$0,0.[00]');
+  },
+};
+
 const startWithZeroConfig = {
   scales: {
     yAxes: [
       {
-        ticks: {
-          min: 0,
-        },
+        ticks,
       },
     ],
   },
