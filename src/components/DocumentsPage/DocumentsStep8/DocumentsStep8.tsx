@@ -57,6 +57,7 @@ const DocumentsStep8 = (props: FormikPartProps) => {
             </ListCardThumbnails>
             <StepActionDocument style={{ paddingRight: 32 }}>
               <BtnDoneDocument
+                id="generate-soa-btn"
                 type="primary"
                 onClick={onClickSubmit}
                 disabled = {!checked}

@@ -95,9 +95,15 @@ export const BtnDoneDocument = styled(BtnStepDocument).attrs({
   className: 'btn-done-document',
 })`
   width: 135px;
-  position: absolute;
-  bottom: 30px;
-  right: 100px;
+  //position: fixed;
+  //bottom: 30px;
+  //right: 100px;
+  //z-index: 999;
+  //
+  //@media (max-height: 600px) {
+  //  bottom: 25px;
+  //  right: 80px;
+  //}
 `;
 
 export const StepWrapper = styled.section`
@@ -244,7 +250,7 @@ export const TitleStep = styled.div.attrs({
       font-size: 16px;
       font-weight: 600;
 
-      ${(props) =>
+      ${props =>
         props.editable &&
         css`
           &:hover {
@@ -279,7 +285,7 @@ export const TitleStepSmall = styled.div.attrs({
       margin: 0 0 10px -10px;
       color: #9096af;
 
-      ${(props) =>
+      ${props =>
         props.editable &&
         css`
           &:hover {

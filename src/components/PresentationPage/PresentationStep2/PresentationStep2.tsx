@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { connect } from 'formik';
 import { Card, Icon } from 'antd';
 import numeral from 'numeral';
-import { get } from 'lodash';
-import { StepWrapper } from '../styled';
+import { get, isNumber } from 'lodash';
 import { Doughnut, Bar } from 'react-chartjs-2';
+import { StepWrapper } from '../styled';
 
 import { DocumentData, FormikPartProps } from '../PresentationPage';
 
@@ -68,6 +68,16 @@ const chartsData = {
 };
 
 const optionsDoughnut = {
+  tooltips: {
+    callbacks: {
+      label: (tooltipItem: any, data: any) => {
+        const { datasets = [] } = data;
+        const [currentDate] = datasets;
+        const [salary] = currentDate.data;
+        return `Salary: ${numeral(salary).format('$0,0.[00]')}`;
+      },
+    },
+  },
   plotOptions: {
     pie: {
       customScale: 1,
@@ -85,9 +95,8 @@ const optionsDoughnut = {
   maintainAspectRatio: true,
   legend: {
     fontSize: 9,
-    fontFamily:
-      '-apple-system, BlinkMacSystemFont, \'Segoe UI\', \'Roboto\', \'Oxygen\', \'Ubuntu\', \'Cantarell\', ' +
-      '\'Fira Sans\', \'Droid Sans\', \'Helvetica Neue\', sans-serif',
+    fontFamily: `-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif`,
   },
 };
 const seriesBarInsurance = {
@@ -111,16 +120,18 @@ const seriesBarInsurance = {
 };
 const defaultOptions = {
   scales: {
-    yAxes: [{
-      ticks: {
-        beginAtZero: true,
-        stepSize: 200000,
-        // Include a dollar sign in the ticks
-        callback: (value: any, index: any, values: any) => {
-          return numeral(Math.round(value * 100) / 100).format('$0,0.[00]');
+    yAxes: [
+      {
+        ticks: {
+          beginAtZero: true,
+          stepSize: 200000,
+          // Include a dollar sign in the ticks
+          callback: (value: any, index: any, values: any) => {
+            return numeral(Math.round(value * 100) / 100).format('$0,0.[00]');
+          },
         },
       },
-    }],
+    ],
   },
   maintainAspectRatio: false,
 };
@@ -153,7 +164,7 @@ const PresentationStep2 = (props: FormikPartProps) => {
             </LiabilitiesBlockStep>
           </StepPositionTop>
           <StepPositionBottom className={get(chartData, 'className')}>
-            <Doughnut options={optionsDoughnut} data={get(chartData, 'chart')} redraw={true} height={200} />
+            <Doughnut options={optionsDoughnut} data={get(chartData, 'chart')} redraw height={200} />
             <DoughnutDesc>
               <LineDoughnut>{get(chartData, 'line1')}</LineDoughnut>
               <LineDoughnutText>{get(chartData, 'line2')}</LineDoughnutText>
