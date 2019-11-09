@@ -47,6 +47,7 @@ const assetConfig = {
     yAxes: [
       {
         ticks: {
+          max: 1800000,
           // Include a dollar sign in the ticks
           callback: (value: any, index: any, values: any) => {
             return numeral(Math.round(value * 100) / 100).format('$0,0.[00]');
@@ -88,6 +89,16 @@ const NetAssetsDrilldownCharts = (props: {
               display: true,
               position: 'bottom',
             },
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    max: 300000,
+                    min: 0,
+                  },
+                },
+              ],
+            },
           }}
         />
       </ChartBlockDrillDown>
@@ -101,6 +112,15 @@ const NetAssetsDrilldownCharts = (props: {
             legend: {
               display: true,
               position: 'bottom',
+            },
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    max: 1550000,
+                  },
+                },
+              ],
             },
           }}
         />

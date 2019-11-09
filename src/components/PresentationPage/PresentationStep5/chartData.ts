@@ -157,7 +157,7 @@ const withoutSalarySacrificeData = {
       78119,
       81090,
     ],
-    inflowCapital: [
+    income: [
       120000,
       124200,
       128547,

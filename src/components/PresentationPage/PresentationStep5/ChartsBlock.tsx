@@ -113,8 +113,8 @@ const calmPVConfigWithoutSalarySarisfy = {
     },
     {
       type: 'line',
-      dataIndex: 'inflowCapital',
-      label: 'Inflow + Capital',
+      dataIndex: 'income',
+      label: 'Income',
       fill: false,
       borderColor: '#ffff00',
       backgroundColor: '#ffff00',
