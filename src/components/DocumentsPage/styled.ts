@@ -95,15 +95,15 @@ export const BtnDoneDocument = styled(BtnStepDocument).attrs({
   className: 'btn-done-document',
 })`
   width: 135px;
-  //position: fixed;
-  //bottom: 30px;
-  //right: 100px;
-  //z-index: 999;
-  //
-  //@media (max-height: 600px) {
-  //  bottom: 25px;
-  //  right: 80px;
-  //}
+  position: fixed;
+  bottom: 30px;
+  right: 100px;
+  z-index: 999;
+
+  @media (max-height: 600px) {
+    bottom: 25px;
+    right: 80px;
+  }
 `;
 
 export const StepWrapper = styled.section`

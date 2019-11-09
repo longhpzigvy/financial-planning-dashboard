@@ -4,7 +4,7 @@ export const CarouselWrapper = styled.section.attrs({
   className: 'carousel-wrapper',
 })`
   .ant-carousel-vertical .slick-dots-left {
-    left: unset !important;
+    left: -15px !important;
   }
   .ant-carousel {
     .slick-dots {
