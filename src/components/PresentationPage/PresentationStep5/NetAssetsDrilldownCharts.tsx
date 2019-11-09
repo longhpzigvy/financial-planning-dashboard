@@ -80,7 +80,7 @@ const NetAssetsDrilldownCharts = (props: {
       </ChartBlockDrillDown>
       <ChartBlockDrillDown hidden={currentDrilldown !== 1}>
         <GraphPresentation
-          type={GraphType.Line}
+          type={GraphType.Bar}
           data={data.liabilities}
           redraw
           height={470}
@@ -104,7 +104,7 @@ const NetAssetsDrilldownCharts = (props: {
       </ChartBlockDrillDown>
       <ChartBlockDrillDown hidden={currentDrilldown !== 2}>
         <GraphPresentation
-          type={GraphType.Line}
+          type={GraphType.Bar}
           data={data.netAssets}
           redraw
           height={470}
