@@ -14,7 +14,7 @@ const configNetAssets = {
       label: 'Value',
       fill: false,
       lineTension: 0.2,
-      borderColor: '#FF5722',
+      borderColor: '#00BCD4',
     },
   ],
 };
